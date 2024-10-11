@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import action_frame.PetsRegistration;
+import methodos.PetsRegistration;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -39,8 +39,8 @@ public class Inicio extends JFrame {
 		btnPetsRegistration.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				PetsRegistration p = new PetsRegistration();
-				p.setVisible(true);
+				PetsRegistration pet = new PetsRegistration();
+		        pet.setVisible(true);
 			}
 		});
 		btnPetsRegistration.setBackground(new Color(231, 206, 234));
