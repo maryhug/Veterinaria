@@ -1,10 +1,11 @@
 package appointments;
 
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
+import javax.swing.DefaultComboBoxModel;
 
 public class Modify extends JPanel {
 
@@ -13,54 +14,58 @@ public class Modify extends JPanel {
 	public Modify() {
 		setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(10, 62, 220, 22);
-		add(comboBox);
+		JComboBox comboBoxPatients = new JComboBox();
+		comboBoxPatients.setBounds(10, 59, 220, 22);
+		add(comboBoxPatients);
 		
-		JLabel lblNewLabel = new JLabel("Pacientes: ");
-		lblNewLabel.setBounds(10, 37, 145, 22);
-		add(lblNewLabel);
+		JLabel lblPatients = new JLabel("Pacientes: ");
+		lblPatients.setBounds(10, 34, 145, 22);
+		add(lblPatients);
 		
-		JLabel lblNewLabel_1 = new JLabel("Dia:");
-		lblNewLabel_1.setBounds(260, 11, 45, 22);
-		add(lblNewLabel_1);
+		JLabel lblDay = new JLabel("Dia:");
+		lblDay.setBounds(268, 13, 45, 22);
+		add(lblDay);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(320, 11, 45, 26);
-		add(comboBox_1);
+		JComboBox comboBoxDay = new JComboBox();
+		comboBoxDay.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		comboBoxDay.setBounds(323, 11, 45, 26);
+		add(comboBoxDay);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Mes: ");
-		lblNewLabel_1_1.setBounds(260, 48, 45, 22);
-		add(lblNewLabel_1_1);
+		JLabel lblMonth = new JLabel("Mes: ");
+		lblMonth.setBounds(268, 48, 45, 22);
+		add(lblMonth);
 		
-		JComboBox comboBox_1_1 = new JComboBox();
-		comboBox_1_1.setBounds(320, 48, 80, 26);
-		add(comboBox_1_1);
+		JComboBox comboBoxMonth = new JComboBox();
+		comboBoxMonth.setModel(new DefaultComboBoxModel(new String[] {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"}));
+		comboBoxMonth.setBounds(323, 46, 80, 26);
+		add(comboBoxMonth);
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("Año:");
-		lblNewLabel_1_1_1.setBounds(260, 90, 45, 22);
-		add(lblNewLabel_1_1_1);
+		JLabel lblNewLabelYear = new JLabel("Año:");
+		lblNewLabelYear.setBounds(268, 83, 45, 22);
+		add(lblNewLabelYear);
 		
-		JComboBox comboBox_1_1_1 = new JComboBox();
-		comboBox_1_1_1.setBounds(320, 88, 80, 26);
-		add(comboBox_1_1_1);
+		JComboBox comboBoxYear = new JComboBox();
+		comboBoxYear.setModel(new DefaultComboBoxModel(new String[] {"2024", "2025", "2026", "2027", "2028", "2029", "2030"}));
+		comboBoxYear.setBounds(323, 81, 80, 26);
+		add(comboBoxYear);
 		
-		JButton btnNewButton = new JButton("Guardar");
-		btnNewButton.setBounds(280, 160, 100, 23);
-		add(btnNewButton);
+		JButton btnSave = new JButton("Guardar");
+		btnSave.setBounds(268, 158, 100, 23);
+		add(btnSave);
 		
-		JLabel lblNewLabel_1_1_1_1 = new JLabel("Lugar:");
-		lblNewLabel_1_1_1_1.setBounds(260, 125, 45, 22);
-		add(lblNewLabel_1_1_1_1);
+		JLabel lblNewLabelPlace = new JLabel("Lugar:");
+		lblNewLabelPlace.setBounds(268, 118, 45, 22);
+		add(lblNewLabelPlace);
 		
-		JComboBox comboBox_1_1_1_1 = new JComboBox();
-		comboBox_1_1_1_1.setBounds(320, 125, 80, 26);
-		add(comboBox_1_1_1_1);
+		JComboBox comboBoxPlace = new JComboBox();
+		comboBoxPlace.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5"}));
+		comboBoxPlace.setBounds(323, 116, 80, 26);
+		add(comboBoxPlace);
 		
-		JLabel lblNewLabel_2 = new JLabel("Modificar");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(23, 7, 119, 19);
-		add(lblNewLabel_2);
+		JLabel lblModify = new JLabel("Modificar");
+		lblModify.setHorizontalAlignment(SwingConstants.CENTER);
+		lblModify.setBounds(20, 10, 119, 19);
+		add(lblModify);
 
 	}
 
