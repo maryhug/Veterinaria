@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import panel.Login;
+import panel.SearchPatients;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -57,14 +59,35 @@ public class PetsRegistration extends JFrame {
         panelOptions.add(btnPetsRegistration);
 
         JButton btnPatientList = new JButton("Lista de Pacientes");
+        btnPatientList.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+        		PatientList listar = new PatientList();
+        		listar.setVisible(true);
+        	}
+        });
         btnPatientList.setBounds(0, 108, 225, 49);
         panelOptions.add(btnPatientList);
 
         JButton btnMedicalHistory = new JButton("Historial Clinico");
+        btnMedicalHistory.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+        		MedicalHistory historial = new MedicalHistory();
+        		historial.setVisible(true);
+        	}
+        });
         btnMedicalHistory.setBounds(0, 160, 225, 49);
         panelOptions.add(btnMedicalHistory);
 
         JButton btnAppointments = new JButton("Agenda de Citas");
+        btnAppointments.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+        		Appointments citas = new Appointments();
+        		citas.setVisible(true);
+        	}
+        });
         btnAppointments.setBounds(0, 211, 225, 49);
         panelOptions.add(btnAppointments);
 
@@ -80,6 +103,13 @@ public class PetsRegistration extends JFrame {
         panelOptions.add(btnExit);
 
         JButton btnBusquedaPacientes = new JButton("Busqueda de Pacientes");
+        btnBusquedaPacientes.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+        		SearchPatients buscar = new SearchPatients();
+        		buscar.setVisible(true);
+        	}
+        });
         btnBusquedaPacientes.setBounds(0, 266, 225, 49);
         panelOptions.add(btnBusquedaPacientes);
 
@@ -102,7 +132,7 @@ public class PetsRegistration extends JFrame {
         // Crear un panel que contendrá todos los campos y agregarlo al JScrollPane
         JPanel panelInfo = new JPanel();
         panelInfo.setLayout(null);
-        panelInfo.setPreferredSize(new Dimension(450, 1000)); // Ajusta el tamaño para activar el scroll
+        panelInfo.setPreferredSize(new Dimension(450, 1050)); // Ajusta el tamaño para activar el scroll
         scrollPane.setViewportView(panelInfo);
 
         // Añadir los campos al panelInfo
@@ -243,12 +273,17 @@ public class PetsRegistration extends JFrame {
         panelInfo.add(textField_12);
         
         JLabel lblextra = new JLabel("Datos extra del propietario:");
-        lblextra.setBounds(10, 940, 940, 14);
+        lblextra.setBounds(10, 940, 160, 14);
         panelInfo.add(lblextra);
 
         textField_13 = new JTextField();
         textField_13.setBounds(10, 960, 430, 30);
         panelInfo.add(textField_13);
+        
+        JButton btnSave = new JButton("Guardar");
+        btnSave.setBounds(10, 1000, 430
+        		, 30);
+        panelInfo.add(btnSave);
         
     }
 

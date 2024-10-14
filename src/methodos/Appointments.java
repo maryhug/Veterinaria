@@ -1,41 +1,74 @@
-package panel;
+package methodos;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import methodos.Appointments;
-import methodos.MedicalHistory;
-import methodos.PatientList;
-import methodos.PetsRegistration;
+import panel.Login;
+import panel.SearchPatients;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
+import java.awt.Font;
 import javax.swing.SwingConstants;
-import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.UIManager;
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Font;
 
-public class Inicio extends JFrame {
+public class Appointments extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel panelHome;
+	private JPanel contentPane;
 
-	public Inicio() {
+	public Appointments() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 755, 520);
+		setBounds(100, 100, 755, 520);
 		setLocationRelativeTo(null);
-		panelHome = new JPanel();
-		panelHome.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(panelHome);
-		panelHome.setLayout(null);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		JPanel contentPane_1 = new JPanel();
+		contentPane_1.setLayout(null);
+		contentPane_1.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane_1.setBounds(0, 0, 739, 481);
+		contentPane.add(contentPane_1);
+
+		JPanel panelResponse = new JPanel();
+		panelResponse.setLayout(null);
+		panelResponse.setBounds(240, 11, 489, 449);
+		contentPane_1.add(panelResponse);
+
+		JLabel lblCitasMedicas = new JLabel("Citas Medicas");
+		lblCitasMedicas.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCitasMedicas.setFont(new Font("Hello Valentica", Font.PLAIN, 50));
+		lblCitasMedicas.setBounds(10, 11, 469, 60);
+		panelResponse.add(lblCitasMedicas);
+
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 82, 469, 356);
+		panelResponse.add(panel);
+		panel.setLayout(null);
 
 		JPanel panelOptions = new JPanel();
-		panelOptions.setBounds(10, 11, 225, 449);
-		panelHome.add(panelOptions);
 		panelOptions.setLayout(null);
+		panelOptions.setBounds(10, 11, 225, 449);
+		contentPane_1.add(panelOptions);
+
+		JButton btnPetsRegistration = new JButton("Ingresar Pacientes");
+		btnPetsRegistration.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				PetsRegistration l = new PetsRegistration();
+				l.setVisible(true);
+			}
+		});
+		btnPetsRegistration.setBackground(UIManager.getColor("Button.background"));
+		btnPetsRegistration.setBounds(0, 57, 225, 49);
+		panelOptions.add(btnPetsRegistration);
 
 		JButton btnPatientList = new JButton("Lista de Pacientes");
 		btnPatientList.addActionListener(new ActionListener() {
@@ -45,6 +78,7 @@ public class Inicio extends JFrame {
 				lista.setVisible(true);
 			}
 		});
+		btnPatientList.setBackground(UIManager.getColor("Button.background"));
 		btnPatientList.setBounds(0, 110, 225, 49);
 		panelOptions.add(btnPatientList);
 
@@ -60,13 +94,7 @@ public class Inicio extends JFrame {
 		panelOptions.add(btnMedicalHistory);
 
 		JButton btnAppointments = new JButton("Agenda de Citas");
-		btnAppointments.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				Appointments l = new Appointments();
-				l.setVisible(true);
-			}
-		});
+		btnAppointments.setBackground(new Color(240, 240, 240));
 		btnAppointments.setBounds(0, 213, 225, 49);
 		panelOptions.add(btnAppointments);
 
@@ -91,33 +119,5 @@ public class Inicio extends JFrame {
 		});
 		btnSearchPatients.setBounds(0, 268, 225, 49);
 		panelOptions.add(btnSearchPatients);
-		
-		JButton btnPetsRegistration = new JButton("Ingresar de Pacientes");
-		btnPetsRegistration.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				PetsRegistration l = new PetsRegistration();
-				l.setVisible(true);
-			}
-		});
-		btnPetsRegistration.setBounds(0, 57, 225, 49);
-		panelOptions.add(btnPetsRegistration);
-
-		JPanel panelResponse = new JPanel();
-		panelResponse.setBounds(245, 11, 489, 449);
-		panelHome.add(panelResponse);
-		panelResponse.setLayout(null);
-
-		JLabel lblGifResponse = new JLabel("");
-		lblGifResponse.setHorizontalAlignment(SwingConstants.CENTER);
-		lblGifResponse.setIcon(new ImageIcon(Inicio.class.getResource("/images/mainBanner.gif")));
-		lblGifResponse.setBounds(0, 121, 489, 200);
-		panelResponse.add(lblGifResponse);
-		
-		JLabel lblTextMenu = new JLabel("Menu Opciones");
-		lblTextMenu.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTextMenu.setFont(new Font("Hello Valentica", Font.PLAIN, 35));
-		lblTextMenu.setBounds(152, 55, 205, 55);
-		panelResponse.add(lblTextMenu);
 	}
 }

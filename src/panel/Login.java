@@ -45,7 +45,7 @@ public class Login extends JFrame {
 
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 760, 510);
+        setBounds(100, 100, 755, 520);
 	    setLocationRelativeTo(null);
 		panelLogin = new JPanel();
 		panelLogin.setBorder(new EmptyBorder(5, 5, 5, 5));

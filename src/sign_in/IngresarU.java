@@ -29,7 +29,7 @@ public class IngresarU extends JFrame {
 
 	public IngresarU() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 760, 510);
+        setBounds(100, 100, 755, 520);
 	    setLocationRelativeTo(null);
 		panelRegister = new JPanel();
 		panelRegister.setBorder(new EmptyBorder(5, 5, 5, 5));
